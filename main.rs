@@ -1,6 +1,11 @@
 const PI: f32 = 3.14;
 static VARIAVEL_GLOBAL: i8 = -1;
 
+fn soma(a: i32, b: i32) -> i32 {
+    println!("{} + {} = {}", a, b, a + b);
+    a + b
+}
+
 fn sombra() {
     let a = 123;
     
@@ -41,4 +46,6 @@ fn escopo()
 fn main() {
     sombra();
     escopo();
+
+    println!("Soma = {}", soma(2, 2));
 }
