@@ -1,7 +1,22 @@
 const PI: f32 = 3.14;
 static VARIAVEL_GLOBAL: i8 = -1;
 
-fn main()
+fn sombra() {
+    let a = 123;
+    
+    {
+        let b = 456;
+        println!("dentro, b = {}", b);
+
+        let a = 777; // Sombra a variável a declarada no escopo externo
+        println!("dentro, a = {}", a);
+    }
+
+    // println!("fora, b = {}", b); // Não compila, pois b está fora do escopo no qual foi declarado
+    println!("fora, a = {}", a);
+}
+
+fn escopo()
 {
     let variavel: u8 = 128;
     println!("variavel = {}, tamanho = {}", variavel, std::mem::size_of_val(&variavel));
@@ -21,4 +36,9 @@ fn main()
     println!("PI = {}", PI);
 
     println!("VARIAVEL_GLOBAL = {}", VARIAVEL_GLOBAL);
+}
+
+fn main() {
+    sombra();
+    escopo();
 }
