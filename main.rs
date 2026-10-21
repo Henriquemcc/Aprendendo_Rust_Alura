@@ -60,6 +60,16 @@ fn condicionais() {
     let condicao = if eh_maior { "maior" } else { "menor" };
     
     println!("É {} de idade", condicao);
+
+    let linguagem = "C#";
+    let proposito = match linguagem {
+        "PHP" => "Web",
+        "Kotlin" => "Android",
+        "Python" => "Data Science",
+        _ => "Desconhecido",
+    };
+
+    println!("O proposito da linguagem {} é {}", linguagem, proposito);
 }
 
 fn repeticoes() {
