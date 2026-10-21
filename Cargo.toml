@@ -1,0 +1,4 @@
+[package]
+name = "Aprendendo_Rust_alura"
+version = "0.0.1"
+authors= ["Henrique Mendonça Castelar Campos <henriquemcc@protonmail.ch>"]
