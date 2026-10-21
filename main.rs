@@ -130,6 +130,11 @@ fn pattern_matching() {
     }
 }
 
+fn erros() {
+    let v = vec![1, 2, 3];
+    v[4]; // Panics, pois o índice 4 não existe no vetor
+}
+
 fn main() {
     sombra();
     escopo();
@@ -141,4 +146,5 @@ fn main() {
     ownership();
 
     pattern_matching();
+    erros();
 }
