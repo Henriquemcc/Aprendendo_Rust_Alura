@@ -43,9 +43,30 @@ fn escopo()
     println!("VARIAVEL_GLOBAL = {}", VARIAVEL_GLOBAL);
 }
 
+fn condicionais() {   
+    let idade: u8 = 19;
+    let responsavel_autorizou: bool = true;
+    let eh_maior = idade >= 18;
+
+    if eh_maior {
+        println!("Pode entrar na balada");
+    } else if idade >= 16 && responsavel_autorizou {
+        println!("Pode entrar na balada com assinatura do responsável");
+    }
+    else {
+        println!("Não pode entrar na balada");
+    }
+
+    let condicao = if eh_maior { "maior" } else { "menor" };
+    
+    println!("É {} de idade", condicao);
+}
+
 fn main() {
     sombra();
     escopo();
 
     println!("Soma = {}", soma(2, 2));
+
+    condicionais();
 }
