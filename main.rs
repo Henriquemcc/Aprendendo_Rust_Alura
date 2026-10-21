@@ -105,6 +105,17 @@ fn repeticoes() {
     }
 }
 
+fn ownership() {
+    let uma_string = String::from("Olá, mundo!");
+    rouba(uma_string);
+
+    // println!("{}", uma_string); // Não compila, pois a ownership da variável foi transferida para a função rouba
+}
+
+fn rouba(string: String) {
+    println!("{}", string);
+}
+
 fn main() {
     sombra();
     escopo();
@@ -113,4 +124,5 @@ fn main() {
 
     condicionais();
     repeticoes();
+    ownership();
 }
