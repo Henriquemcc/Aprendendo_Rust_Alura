@@ -137,7 +137,18 @@ fn erros() {
     // v[4]; // Panics, pois o índice 4 não existe no vetor
 
     // Exemplo de erro proposital usando a macro panic!
-    panic!("Erro proposital"); // Panics, pois a função panic!() é chamada
+    // panic!("Erro proposital"); // Panics, pois a função panic!() é chamada
+
+    // Exemplo de erro recuperável usando Result
+    match resultado() {
+        Ok(mensagem) => println!("String de sucesso: {}", mensagem),
+        Err(codigo) => println!("Erro com código: {}", codigo)
+    };
+}
+
+fn resultado() -> Result<String, u8> {
+    //Ok(String::from("Tudo deu certo"))
+    Err(42)
 }
 
 fn main() {
