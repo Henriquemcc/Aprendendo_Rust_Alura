@@ -131,8 +131,13 @@ fn pattern_matching() {
 }
 
 fn erros() {
-    let v = vec![1, 2, 3];
-    v[4]; // Panics, pois o índice 4 não existe no vetor
+
+    // Exemplo de erro ao acessar um índice inexistente em um vetor
+    // let v = vec![1, 2, 3];
+    // v[4]; // Panics, pois o índice 4 não existe no vetor
+
+    // Exemplo de erro proposital usando a macro panic!
+    panic!("Erro proposital"); // Panics, pois a função panic!() é chamada
 }
 
 fn main() {
