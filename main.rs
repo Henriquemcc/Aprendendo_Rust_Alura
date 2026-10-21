@@ -106,13 +106,15 @@ fn repeticoes() {
 }
 
 fn ownership() {
-    let uma_string = String::from("Olá, mundo!");
-    rouba(uma_string);
+    let mut uma_string = String::from("Olá, mundo!");
+    rouba(&mut uma_string);
 
-    // println!("{}", uma_string); // Não compila, pois a ownership da variável foi transferida para a função rouba
+    println!("{}", uma_string);
 }
 
-fn rouba(string: String) {
+fn rouba(string: &mut String) {
+    // string = String::from("Oi"); // Não compila, pois string é uma referência imutável
+    string.push_str(" Como vai?");
     println!("{}", string);
 }
 
