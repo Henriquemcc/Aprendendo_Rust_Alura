@@ -15,3 +15,5 @@ Os arquivos oficiais do curso, desenvolvidos pelo instrutor, estão disponíveis
 Os cursos em que estes arquivos foram desenvolvidos:
 
 [Rust: a linguagem de programação performática e segura](https://cursos.alura.com.br/course/rust-linguagem-programacao-performatica-segura).
+
+[Rust: aprenda mais sobre tipos](https://cursos.alura.com.br/course/rust-aprenda-sobre-tipos).
