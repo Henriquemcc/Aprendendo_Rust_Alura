@@ -10,6 +10,8 @@ Os arquivos oficiais do curso, desenvolvidos pelo instrutor, estão disponíveis
 
 [Rust: a linguagem de programação performática e segura](https://github.com/alura-cursos/2418-rust/).
 
+[Rust: aprenda mais sobre tipos](https://github.com/alura-cursos/2424-rust2/)
+
 ## Cursos
 
 Os cursos em que estes arquivos foram desenvolvidos:
