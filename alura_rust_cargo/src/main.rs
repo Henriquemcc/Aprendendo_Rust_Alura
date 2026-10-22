@@ -6,8 +6,8 @@ fn main() {
     let notas: [f32; 4] = [6.5; 4];
 
     // Acessando o primeiro elemento do array usando um índice
-    // let inteiro: i64 = 0;
-    // println!("{}", notas[inteiro]); // não compila, pois o índice deve ser do tipo usize
+    let inteiro: usize = 0;
+    println!("{}", notas[inteiro]);
 
     // Acessando os elementos individualmente e imprimindo-os
     println!(
