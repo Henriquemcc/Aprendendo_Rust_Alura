@@ -1,5 +1,3 @@
-use crate::DiaDaSemana::Domingo;
-
 fn main() {
     // Criando um array de notas com 4 elementos do tipo f32
     // let notas: [f32; 4] = [10.0, 8.0, 9.5, 6.0];
@@ -31,11 +29,10 @@ fn main() {
 
     println!("É fim de semana? {}", eh_fim_de_semana(DiaDaSemana::Quarta));
 
-    let dia: DiaDaSemana = DiaDaSemana::Sexta;
-
     cores();
 }
 
+#[allow(dead_code)]
 enum DiaDaSemana {
     Domingo,
     Segunda,
@@ -69,22 +66,30 @@ fn matriz() {
     }
 }
 
+#[allow(dead_code)]
 enum Color {
     Red,
     Green,
     Blue,
-    RgbColor(u8, u8, u8)
+    RgbColor(u8, u8, u8),
+    CymkColor{cyan: u8, magenta: u8, yellow: u8, black: u8}
 }
 
 fn cores() {
 
-    let cor = Color::Red;
+    // let cor = Color::CymkColor { cyan: 100, magenta: 50, yellow: 70, black: 255 };
+    let cor = Color::RgbColor(12, 5, 32);
 
     println!("Cor = {}", match cor {
         Color::Red => "vermelho",
         Color::Green => "verde",
         Color::Blue => "azul",
-        Color::RgbColor(0, 0, 0) => "preta",
-        Color::RgbColor(_, _, _) => "RGB Desconhecida"
+        Color::RgbColor(0, 0, 0)
+            | Color::CymkColor { cyan: _, magenta: _, yellow: _, black: 255 } => "preta",
+        Color::RgbColor(_, green, _) => {
+            println!("{}", green);
+            "RGB Desconhecida"
+        },
+        Color::CymkColor{cyan: _, magenta: _, yellow: _, black: _} => "CYMK desconhecida",
     });
 }
