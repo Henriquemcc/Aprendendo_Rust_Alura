@@ -1,3 +1,5 @@
+use crate::DiaDaSemana::Domingo;
+
 fn main() {
     // Criando um array de notas com 4 elementos do tipo f32
     // let notas: [f32; 4] = [10.0, 8.0, 9.5, 6.0];
@@ -26,6 +28,27 @@ fn main() {
     }
 
     matriz();
+
+    println!("É fim de semana? {}", eh_fim_de_semana(DiaDaSemana::Quarta));
+
+    let dia: DiaDaSemana = DiaDaSemana::Sexta;
+}
+
+enum DiaDaSemana {
+    Domingo,
+    Segunda,
+    Terca,
+    Quarta,
+    Quinta,
+    Sexta,
+    Sabado,
+}
+
+fn eh_fim_de_semana(dia_da_semana: DiaDaSemana ) -> bool {
+    match dia_da_semana {
+        DiaDaSemana::Domingo | DiaDaSemana::Sabado => true,
+        _ => false
+    }
 }
 
 fn matriz() {
