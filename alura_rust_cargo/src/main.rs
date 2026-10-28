@@ -32,6 +32,8 @@ fn main() {
     println!("É fim de semana? {}", eh_fim_de_semana(DiaDaSemana::Quarta));
 
     let dia: DiaDaSemana = DiaDaSemana::Sexta;
+
+    cores();
 }
 
 enum DiaDaSemana {
@@ -65,4 +67,24 @@ fn matriz() {
             println!("Item = {}", item);
         }
     }
+}
+
+enum Color {
+    Red,
+    Green,
+    Blue,
+    RgbColor(u8, u8, u8)
+}
+
+fn cores() {
+
+    let cor = Color::Red;
+
+    println!("Cor = {}", match cor {
+        Color::Red => "vermelho",
+        Color::Green => "verde",
+        Color::Blue => "azul",
+        Color::RgbColor(0, 0, 0) => "preta",
+        Color::RgbColor(_, _, _) => "RGB Desconhecida"
+    });
 }
