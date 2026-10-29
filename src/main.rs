@@ -3,19 +3,6 @@ fn soma(a: i32, b: i32) -> i32 {
     a + b
 }
 
-fn ownership() {
-    let mut uma_string = String::from("Olá, mundo!");
-    rouba(&mut uma_string);
-
-    println!("{}", uma_string);
-}
-
-fn rouba(string: &mut String) {
-    // string = String::from("Oi"); // Não compila, pois string é uma referência imutável
-    string.push_str(" Como vai?");
-    println!("{}", string);
-}
-
 fn pattern_matching() {
     for x in 1..=20 {
         println!(
@@ -54,8 +41,6 @@ fn resultado() -> Result<String, u8> {
 
 fn main() {
     println!("Soma = {}", soma(2, 2));
-
-    ownership();
 
     pattern_matching();
     erros();
