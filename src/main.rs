@@ -3,49 +3,6 @@ fn soma(a: i32, b: i32) -> i32 {
     a + b
 }
 
-fn repeticoes() {
-    let multiplicador: u8 = 5;
-
-    let mut contador: u8 = 0;
-    while contador < 10 {
-        contador += 1;
-
-        if contador == 5 {
-            continue;
-        }
-
-        println!(
-            "{} x {} = {}",
-            multiplicador,
-            contador,
-            multiplicador * contador
-        );
-    }
-
-    contador = 0;
-    loop {
-        contador += 1;
-        println!(
-            "{} x {} = {}",
-            multiplicador,
-            contador,
-            multiplicador * contador
-        );
-
-        if contador == 10 {
-            break;
-        }
-    }
-
-    for i in 1..=10 {
-        println!("{} x {} = {}", multiplicador, i, multiplicador * i);
-    }
-
-    for i in 1..11 {
-        println!("{} x {} = {}", multiplicador, i, multiplicador * i);
-    }
-}
-
 fn ownership() {
     let mut uma_string = String::from("Olá, mundo!");
     rouba(&mut uma_string);
@@ -98,7 +55,6 @@ fn resultado() -> Result<String, u8> {
 fn main() {
     println!("Soma = {}", soma(2, 2));
 
-    repeticoes();
     ownership();
 
     pattern_matching();
