@@ -3,22 +3,6 @@ fn soma(a: i32, b: i32) -> i32 {
     a + b
 }
 
-fn pattern_matching() {
-    for x in 1..=20 {
-        println!(
-            "{}: {}",
-            x,
-            match x {
-                1 => "Pouco",
-                2 | 3 => "Um pouquinho",
-                4..=10 => "Um bocado",
-                _ if x % 2 == 0 => "Uma boa quantidade",
-                _ => "Muito",
-            }
-        );
-    }
-}
-
 fn erros() {
     // Exemplo de erro ao acessar um índice inexistente em um vetor
     // let v = vec![1, 2, 3];
@@ -42,6 +26,5 @@ fn resultado() -> Result<String, u8> {
 fn main() {
     println!("Soma = {}", soma(2, 2));
 
-    pattern_matching();
     erros();
 }
