@@ -1,50 +1,6 @@
-const PI: f32 = 3.14;
-static VARIAVEL_GLOBAL: i8 = -1;
-
 fn soma(a: i32, b: i32) -> i32 {
     println!("{} + {} = {}", a, b, a + b);
     a + b
-}
-
-fn escopo() {
-    let variavel: u8 = 128;
-    println!(
-        "variavel = {}, tamanho = {}",
-        variavel,
-        std::mem::size_of_val(&variavel)
-    );
-
-    let decimal: f32 = 2.5;
-    println!(
-        "decimal = {}, tamanho = {}",
-        decimal,
-        std::mem::size_of_val(&decimal)
-    );
-
-    let mut booleana: bool = false;
-    println!(
-        "booleana = {}, tamanho = {}",
-        booleana,
-        std::mem::size_of_val(&booleana)
-    );
-
-    booleana = true;
-    println!(
-        "booleana = {}, tamanho = {}",
-        booleana,
-        std::mem::size_of_val(&booleana)
-    );
-
-    let letra: char = 'z';
-    println!(
-        "letra = {}, tamanho = {}",
-        letra,
-        std::mem::size_of_val(&letra)
-    );
-
-    println!("PI = {}", PI);
-
-    println!("VARIAVEL_GLOBAL = {}", VARIAVEL_GLOBAL);
 }
 
 fn condicionais() {
@@ -168,8 +124,6 @@ fn resultado() -> Result<String, u8> {
 }
 
 fn main() {
-    escopo();
-
     println!("Soma = {}", soma(2, 2));
 
     condicionais();
