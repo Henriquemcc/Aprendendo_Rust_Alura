@@ -6,44 +6,48 @@ fn soma(a: i32, b: i32) -> i32 {
     a + b
 }
 
-fn sombra() {
-    let a = 123;
-    
-    {
-        let b = 456;
-        println!("dentro, b = {}", b);
-
-        let a = 777; // Sombra a variável a declarada no escopo externo
-        println!("dentro, a = {}", a);
-    }
-
-    // println!("fora, b = {}", b); // Não compila, pois b está fora do escopo no qual foi declarado
-    println!("fora, a = {}", a);
-}
-
-fn escopo()
-{
+fn escopo() {
     let variavel: u8 = 128;
-    println!("variavel = {}, tamanho = {}", variavel, std::mem::size_of_val(&variavel));
+    println!(
+        "variavel = {}, tamanho = {}",
+        variavel,
+        std::mem::size_of_val(&variavel)
+    );
 
     let decimal: f32 = 2.5;
-    println!("decimal = {}, tamanho = {}", decimal, std::mem::size_of_val(&decimal));
+    println!(
+        "decimal = {}, tamanho = {}",
+        decimal,
+        std::mem::size_of_val(&decimal)
+    );
 
     let mut booleana: bool = false;
-    println!("booleana = {}, tamanho = {}", booleana, std::mem::size_of_val(&booleana));
+    println!(
+        "booleana = {}, tamanho = {}",
+        booleana,
+        std::mem::size_of_val(&booleana)
+    );
 
     booleana = true;
-    println!("booleana = {}, tamanho = {}", booleana, std::mem::size_of_val(&booleana));
+    println!(
+        "booleana = {}, tamanho = {}",
+        booleana,
+        std::mem::size_of_val(&booleana)
+    );
 
     let letra: char = 'z';
-    println!("letra = {}, tamanho = {}", letra, std::mem::size_of_val(&letra));
+    println!(
+        "letra = {}, tamanho = {}",
+        letra,
+        std::mem::size_of_val(&letra)
+    );
 
     println!("PI = {}", PI);
 
     println!("VARIAVEL_GLOBAL = {}", VARIAVEL_GLOBAL);
 }
 
-fn condicionais() {   
+fn condicionais() {
     let idade: u8 = 19;
     let responsavel_autorizou: bool = true;
     let eh_maior = idade >= 18;
@@ -52,13 +56,12 @@ fn condicionais() {
         println!("Pode entrar na balada");
     } else if idade >= 16 && responsavel_autorizou {
         println!("Pode entrar na balada com assinatura do responsável");
-    }
-    else {
+    } else {
         println!("Não pode entrar na balada");
     }
 
     let condicao = if eh_maior { "maior" } else { "menor" };
-    
+
     println!("É {} de idade", condicao);
 
     let linguagem = "C#";
@@ -74,7 +77,7 @@ fn condicionais() {
 
 fn repeticoes() {
     let multiplicador: u8 = 5;
-    
+
     let mut contador: u8 = 0;
     while contador < 10 {
         contador += 1;
@@ -83,14 +86,24 @@ fn repeticoes() {
             continue;
         }
 
-        println!("{} x {} = {}", multiplicador, contador, multiplicador * contador);
+        println!(
+            "{} x {} = {}",
+            multiplicador,
+            contador,
+            multiplicador * contador
+        );
     }
 
     contador = 0;
     loop {
         contador += 1;
-        println!("{} x {} = {}", multiplicador, contador, multiplicador * contador);
-        
+        println!(
+            "{} x {} = {}",
+            multiplicador,
+            contador,
+            multiplicador * contador
+        );
+
         if contador == 10 {
             break;
         }
@@ -120,18 +133,21 @@ fn rouba(string: &mut String) {
 
 fn pattern_matching() {
     for x in 1..=20 {
-        println!("{}: {}", x, match x {
-            1 => "Pouco",
-            2 | 3 => "Um pouquinho",
-            4..=10 => "Um bocado",
-            _ if x % 2 == 0 => "Uma boa quantidade",
-            _ => "Muito"
-        });
+        println!(
+            "{}: {}",
+            x,
+            match x {
+                1 => "Pouco",
+                2 | 3 => "Um pouquinho",
+                4..=10 => "Um bocado",
+                _ if x % 2 == 0 => "Uma boa quantidade",
+                _ => "Muito",
+            }
+        );
     }
 }
 
 fn erros() {
-
     // Exemplo de erro ao acessar um índice inexistente em um vetor
     // let v = vec![1, 2, 3];
     // v[4]; // Panics, pois o índice 4 não existe no vetor
@@ -142,7 +158,7 @@ fn erros() {
     // Exemplo de erro recuperável usando Result
     match resultado() {
         Ok(mensagem) => println!("String de sucesso: {}", mensagem),
-        Err(codigo) => println!("Erro com código: {}", codigo)
+        Err(codigo) => println!("Erro com código: {}", codigo),
     };
 }
 
@@ -152,7 +168,6 @@ fn resultado() -> Result<String, u8> {
 }
 
 fn main() {
-    sombra();
     escopo();
 
     println!("Soma = {}", soma(2, 2));
