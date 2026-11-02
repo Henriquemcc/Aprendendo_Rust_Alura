@@ -16,6 +16,26 @@ fn conteudo_opcional() {
     }
 }
 
+// enum Option<T> {
+//     Some(T),
+//     None,
+// }
+
+// enum Option {
+//     Some(String),
+//     None,
+// }
+
+// enum Option {
+//     Some(u8),
+//     None,
+// }
+
+// enum Result<S, E> {
+//     Ok(S),
+//     Err(E)
+// }
+
 fn ler_arquivo(caminho_arquivo: String) -> Option<String> {
     Some(String::from("Conteúdo do arquivo"))
     //None
