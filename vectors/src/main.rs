@@ -32,4 +32,21 @@ fn vectors() {
             None => 0.0,
         }
     );
+
+    // Removendo e imprimindo o último valor do vetor
+    if let Some(nota) = notas.pop() {
+        println!("Último valor = {}", nota);
+        println!("{:?}", notas);
+    }
+
+    // Removendo e imprimindo o último valor do vetor para cada valor
+    // while let Some(nota) = notas.pop() {
+    //     println!("Valor removido = {}", nota);
+    // }
+
+    // Imprimindo cada nota do vetor
+    for nota in &notas {
+        println!("Nota = {}", nota);
+    }
+    println!("{:?}", notas);
 }
