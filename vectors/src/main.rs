@@ -3,15 +3,25 @@ fn main() {
 }
 
 fn vectors() {
-    //let mut notas: Vec<f32> = Vec::new();
-    let mut notas: Vec<f32> = vec![10.0, 8.8, 6.5];
-    // notas.push(10.0);
-    // notas.push(8.8);
-    // notas.push(6.5);
+    // let mut notas: Vec<f32> = Vec::new();
+    let mut notas: Vec<f32> = Vec::with_capacity(4);
+    // let mut notas: Vec<f32> = vec![10.0, 8.8, 6.5];
+    notas.push(10.0);
+    notas.push(8.8);
+    notas.push(6.5);
+
+    // Imprimindo a capacidade do vetor
+    println!("Capacidade = {}", notas.capacity());
 
     println!("{:?}", notas);
 
+    // Adicionando mais um valor ao vetor
     notas.push(6.8);
+
+    // Imprimindo a capacidade do vetor
+    println!("Capacidade = {}", notas.capacity());
+
+    // Imprimindo os elementos do vetor
     println!("{:?}", notas);
 
     println!("Nota 1 = {}", notas[0]);
