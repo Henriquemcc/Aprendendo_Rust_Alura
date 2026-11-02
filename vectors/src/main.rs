@@ -13,4 +13,23 @@ fn vectors() {
 
     notas.push(6.8);
     println!("{:?}", notas);
+
+    println!("Nota 1 = {}", notas[0]);
+    // println!("Nota 8 = {}", notas[7]); // Vai gerar um panic, pois não existe o indice 7 no vetor
+
+    println!(
+        "Nota 6 = {}",
+        match notas.get(7) {
+            Some(n) => *n,
+            None => 0.0,
+        }
+    );
+
+    println!(
+        "Nota 4 = {}",
+        match notas.get(3) {
+            Some(n) => *n,
+            None => 0.0,
+        }
+    );
 }
