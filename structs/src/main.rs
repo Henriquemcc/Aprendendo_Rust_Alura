@@ -19,16 +19,22 @@ impl Conta {
             self.titular.nome, self.titular.sobrenome, self.saldo
         );
     }
+
+    fn sacar(&mut self, valor: f64) {
+        self.saldo -= valor;
+    }
 }
 
 fn conta_corrente() {
-    let conta: Conta = Conta {
+    let mut conta: Conta = Conta {
         titular: Titular {
             nome: String::from("João"),
             sobrenome: String::from("Silva"),
         },
         saldo: 100.0,
     };
+
+    conta.sacar(50.0);
 
     conta.imprimir_dados();
 }
