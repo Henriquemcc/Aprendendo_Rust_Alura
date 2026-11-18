@@ -12,6 +12,15 @@ struct Conta {
     saldo: f64,
 }
 
+impl Conta {
+    fn imprimir_dados(&self) {
+        println!(
+            "Dados da conta: Titular = {} {}, Saldo = {}",
+            self.titular.nome, self.titular.sobrenome, self.saldo
+        );
+    }
+}
+
 fn conta_corrente() {
     let conta: Conta = Conta {
         titular: Titular {
@@ -21,8 +30,5 @@ fn conta_corrente() {
         saldo: 100.0,
     };
 
-    println!(
-        "Dados da conta: Titular = {} {}, Saldo = {}",
-        conta.titular.nome, conta.titular.sobrenome, conta.saldo
-    );
+    conta.imprimir_dados();
 }
